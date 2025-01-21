@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 //   audio.autoplay;
   //   console.log(fetch("http://localhost:5000/planets"));
   try {
-    const response = await fetch("http://localhost:5000/planets?n=8");
+    const response = await fetch("https://universe-apis.onrender.com/planets?n=8");
     const data = await response.json();
     console.log(data);
     let content = ``;

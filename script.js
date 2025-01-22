@@ -2,14 +2,18 @@ const planetsBox = document.getElementById("planets");
 const audio = document.querySelector("audio");
 
 document.addEventListener("DOMContentLoaded", async () => {
-//   audio.autoplay;
+  //   audio.autoplay;
   //   console.log(fetch("http://localhost:5000/planets"));
   try {
     const response = await fetch("https://universe-apis.onrender.com/planets?n=8");
     const data = await response.json();
     console.log(data);
+    const result = await axios.get(
+      "https://universe-apis.onrender.com/planets?n=8"
+    );
+    console.log(result.data);
     let content = ``;
-    data.map(
+    result.data.map(
       (planet) =>
         (content += `
             <div id="planet-card">
